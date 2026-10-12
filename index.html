@@ -7,7 +7,7 @@
     <title>My Profile and Contact Page</title>
 
     <style>
-        /* General styles */
+
         * {
             box-sizing: border-box;
         }
@@ -24,7 +24,7 @@
             line-height: 1.7;
         }
 
-        /* Skip link for accessibility */
+
         .skip-link {
             position: absolute;
             top: -60px;
@@ -40,7 +40,7 @@
             top: 10px;
         }
 
-        /* Header */
+
         header {
             background: linear-gradient(135deg, #123f3b, #28766d);
             color: white;
@@ -58,7 +58,7 @@
             margin: 0;
         }
 
-        /* Navigation */
+
         nav {
             background-color: white;
             text-align: center;
@@ -94,14 +94,14 @@
             border-radius: 3px;
         }
 
-        /* Main layout */
+
         main {
             max-width: 900px;
             margin: 40px auto;
             padding: 0 20px;
         }
 
-        /* About and contact sections */
+
         article,
         #contact {
             background-color: white;
@@ -125,7 +125,7 @@
             margin-top: 25px;
         }
 
-        /* Profile image */
+
         article img {
             display: block;
             width: 170px;
@@ -138,7 +138,7 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
         }
 
-        /* Lists */
+
         article ul,
         article ol {
             padding-left: 25px;
@@ -153,14 +153,14 @@
             color: #28766d;
         }
 
-        /* Form labels */
+
         form label {
             display: block;
             font-weight: bold;
             margin-bottom: 6px;
         }
 
-        /* Form fields */
+
         form input[type="text"],
         form input[type="email"],
         form select,
@@ -187,7 +187,7 @@
             resize: vertical;
         }
 
-        /* Newsletter checkbox */
+
         .newsletter {
             display: flex;
             align-items: center;
@@ -207,7 +207,7 @@
             font-weight: normal;
         }
 
-        /* Submit button */
+
         button {
             background-color: #28766d;
             color: white;
@@ -229,7 +229,7 @@
             outline-offset: 3px;
         }
 
-        /* Footer */
+
         footer {
             background-color: #123f3b;
             color: white;
@@ -241,7 +241,7 @@
             margin: 0;
         }
 
-        /* Mobile layout */
+
         @media (max-width: 600px) {
             header {
                 padding: 40px 15px;
@@ -274,7 +274,7 @@
             }
         }
 
-        /* Respect reduced-motion preferences */
+
         @media (prefers-reduced-motion: reduce) {
             html {
                 scroll-behavior: auto;
@@ -291,18 +291,17 @@
 
 <body>
 
-    <!-- Skip link -->
+
     <a class="skip-link" href="#main-content">
         Skip to main content
     </a>
 
-    <!-- Header -->
+
     <header>
         <h1>My Profile and Contact Page</h1>
         <p>Welcome to my personal webpage!</p>
     </header>
 
-    <!-- Navigation -->
     <nav aria-label="Main navigation">
         <ul>
             <li><a href="#about">About Me</a></li>
@@ -310,7 +309,7 @@
         </ul>
     </nav>
 
-    <!-- Main content -->
+
     <main id="main-content">
 
         <!-- About Me article -->
@@ -318,7 +317,7 @@
             <h2>About Me</h2>
 
             <img
-                src="profile.jpg.jpeg"
+                src="profile.jpg"
                 alt="Portrait of the website owner"
                 width="170"
                 height="170"
@@ -346,13 +345,13 @@
             </ol>
         </article>
 
-        <!-- Contact section -->
+        <
         <section id="contact" aria-labelledby="contact-heading">
             <h2 id="contact-heading">Contact Me</h2>
 
             <form action="#" method="post">
 
-                <!-- Full name -->
+
                 <label for="full-name">Full Name:</label>
                 <input
                     type="text"
@@ -363,7 +362,7 @@
                     required
                 >
 
-                <!-- Email address -->
+
                 <label for="email">Email Address:</label>
                 <input
                     type="email"
@@ -374,7 +373,7 @@
                     required
                 >
 
-                <!-- Inquiry category -->
+
                 <label for="category">Inquiry Category:</label>
                 <select id="category" name="category" required>
                     <option value="">-- Select a category --</option>
@@ -383,7 +382,7 @@
                     <option value="support">Support</option>
                 </select>
 
-                <!-- Message -->
+
                 <label for="message">Message:</label>
                 <textarea
                     id="message"
@@ -393,7 +392,7 @@
                     required
                 ></textarea>
 
-                <!-- Newsletter subscription -->
+
                 <div class="newsletter">
                     <input
                         type="checkbox"
@@ -405,7 +404,7 @@
                     </label>
                 </div>
 
-                <!-- Submit button -->
+
                 <button type="submit">Submit</button>
 
             </form>
@@ -413,7 +412,7 @@
 
     </main>
 
-    <!-- Footer -->
+    
     <footer>
         <p>Thank you for visiting my webpage.</p>
     </footer>
