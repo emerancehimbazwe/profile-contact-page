@@ -1,4 +1,4 @@
-```html
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +7,7 @@
     <title>My Profile and Contact Page</title>
 
     <style>
-        /* General styling */
+        /* General styles */
         * {
             box-sizing: border-box;
         }
@@ -24,10 +24,10 @@
             line-height: 1.7;
         }
 
-        /* Skip link for keyboard accessibility */
+        /* Skip link for accessibility */
         .skip-link {
             position: absolute;
-            top: -50px;
+            top: -60px;
             left: 10px;
             background-color: #123f3b;
             color: white;
@@ -61,12 +61,8 @@
         /* Navigation */
         nav {
             background-color: white;
-            padding: 16px;
             text-align: center;
-            position: sticky;
-            top: 0;
-            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.07);
-            z-index: 10;
+            padding: 20px;
         }
 
         nav ul {
@@ -92,6 +88,12 @@
             color: #df7958;
         }
 
+        nav a:focus-visible {
+            outline: 3px solid #df7958;
+            outline-offset: 5px;
+            border-radius: 3px;
+        }
+
         /* Main layout */
         main {
             max-width: 900px;
@@ -99,14 +101,15 @@
             padding: 0 20px;
         }
 
+        /* About and contact sections */
         article,
-        section {
+        #contact {
             background-color: white;
             padding: 35px;
             margin-bottom: 30px;
             border-radius: 18px;
             box-shadow: 0 8px 25px rgba(24, 66, 60, 0.08);
-            scroll-margin-top: 75px;
+            scroll-margin-top: 25px;
         }
 
         h2 {
@@ -122,11 +125,12 @@
             margin-top: 25px;
         }
 
-        /* Profile picture */
+        /* Profile image */
         article img {
             display: block;
             width: 170px;
             height: 170px;
+            max-width: 100%;
             object-fit: cover;
             border-radius: 50%;
             border: 5px solid #d9ebe7;
@@ -172,11 +176,11 @@
             font: inherit;
         }
 
-        form input:focus,
-        form select:focus,
-        form textarea:focus {
-            outline: 2px solid #28766d;
-            border-color: #28766d;
+        form input:focus-visible,
+        form select:focus-visible,
+        form textarea:focus-visible {
+            outline: 3px solid #28766d;
+            outline-offset: 2px;
         }
 
         form textarea {
@@ -195,6 +199,7 @@
             width: 18px;
             height: 18px;
             accent-color: #28766d;
+            flex-shrink: 0;
         }
 
         .newsletter label {
@@ -217,7 +222,6 @@
 
         button:hover {
             background-color: #164e49;
-            transform: translateY(-2px);
         }
 
         button:focus-visible {
@@ -237,7 +241,7 @@
             margin: 0;
         }
 
-        /* Mobile-friendly layout */
+        /* Mobile layout */
         @media (max-width: 600px) {
             header {
                 padding: 40px 15px;
@@ -247,8 +251,12 @@
                 font-size: 29px;
             }
 
+            nav {
+                padding: 15px 8px;
+            }
+
             nav li {
-                margin: 0 9px;
+                margin: 5px 9px;
             }
 
             main {
@@ -257,7 +265,7 @@
             }
 
             article,
-            section {
+            #contact {
                 padding: 22px;
             }
 
@@ -265,20 +273,36 @@
                 font-size: 23px;
             }
         }
+
+        /* Respect reduced-motion preferences */
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                transition: none !important;
+            }
+        }
     </style>
 </head>
 
 <body>
 
+    <!-- Skip link -->
     <a class="skip-link" href="#main-content">
         Skip to main content
     </a>
 
+    <!-- Header -->
     <header>
         <h1>My Profile and Contact Page</h1>
         <p>Welcome to my personal webpage!</p>
     </header>
 
+    <!-- Navigation -->
     <nav aria-label="Main navigation">
         <ul>
             <li><a href="#about">About Me</a></li>
@@ -286,16 +310,18 @@
         </ul>
     </nav>
 
+    <!-- Main content -->
     <main id="main-content">
 
+        <!-- About Me article -->
         <article id="about">
             <h2>About Me</h2>
 
             <img
                 src="profile.jpg.jpeg"
                 alt="Portrait of the website owner"
-                width="200"
-                height="200"
+                width="170"
+                height="170"
             >
 
             <p>
@@ -304,6 +330,7 @@
             </p>
 
             <h3>My Interests</h3>
+
             <ul>
                 <li>Web development</li>
                 <li>Reading</li>
@@ -311,6 +338,7 @@
             </ul>
 
             <h3>My Goals</h3>
+
             <ol>
                 <li>Improve my HTML skills</li>
                 <li>Learn CSS</li>
@@ -318,11 +346,13 @@
             </ol>
         </article>
 
-        <section id="contact">
-            <h2>Contact Me</h2>
+        <!-- Contact section -->
+        <section id="contact" aria-labelledby="contact-heading">
+            <h2 id="contact-heading">Contact Me</h2>
 
             <form action="#" method="post">
 
+                <!-- Full name -->
                 <label for="full-name">Full Name:</label>
                 <input
                     type="text"
@@ -333,6 +363,7 @@
                     required
                 >
 
+                <!-- Email address -->
                 <label for="email">Email Address:</label>
                 <input
                     type="email"
@@ -343,6 +374,7 @@
                     required
                 >
 
+                <!-- Inquiry category -->
                 <label for="category">Inquiry Category:</label>
                 <select id="category" name="category" required>
                     <option value="">-- Select a category --</option>
@@ -351,6 +383,7 @@
                     <option value="support">Support</option>
                 </select>
 
+                <!-- Message -->
                 <label for="message">Message:</label>
                 <textarea
                     id="message"
@@ -360,6 +393,7 @@
                     required
                 ></textarea>
 
+                <!-- Newsletter subscription -->
                 <div class="newsletter">
                     <input
                         type="checkbox"
@@ -371,6 +405,7 @@
                     </label>
                 </div>
 
+                <!-- Submit button -->
                 <button type="submit">Submit</button>
 
             </form>
@@ -378,10 +413,10 @@
 
     </main>
 
+    <!-- Footer -->
     <footer>
         <p>Thank you for visiting my webpage.</p>
     </footer>
 
 </body>
 </html>
-```
