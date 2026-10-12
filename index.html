@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +7,7 @@
     <title>My Profile and Contact Page</title>
 
     <style>
-    
+        /* General styling */
         * {
             box-sizing: border-box;
         }
@@ -22,6 +23,24 @@
             color: #263b3a;
             line-height: 1.7;
         }
+
+        /* Skip link for keyboard accessibility */
+        .skip-link {
+            position: absolute;
+            top: -50px;
+            left: 10px;
+            background-color: #123f3b;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            z-index: 100;
+        }
+
+        .skip-link:focus {
+            top: 10px;
+        }
+
+        /* Header */
         header {
             background: linear-gradient(135deg, #123f3b, #28766d);
             color: white;
@@ -39,6 +58,7 @@
             margin: 0;
         }
 
+        /* Navigation */
         nav {
             background-color: white;
             padding: 16px;
@@ -71,6 +91,8 @@
         nav a:focus {
             color: #df7958;
         }
+
+        /* Main layout */
         main {
             max-width: 900px;
             margin: 40px auto;
@@ -99,6 +121,8 @@
             color: #28766d;
             margin-top: 25px;
         }
+
+        /* Profile picture */
         article img {
             display: block;
             width: 170px;
@@ -110,6 +134,7 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
         }
 
+        /* Lists */
         article ul,
         article ol {
             padding-left: 25px;
@@ -124,12 +149,14 @@
             color: #28766d;
         }
 
+        /* Form labels */
         form label {
             display: block;
             font-weight: bold;
             margin-bottom: 6px;
         }
 
+        /* Form fields */
         form input[type="text"],
         form input[type="email"],
         form select,
@@ -156,6 +183,7 @@
             resize: vertical;
         }
 
+        /* Newsletter checkbox */
         .newsletter {
             display: flex;
             align-items: center;
@@ -174,6 +202,7 @@
             font-weight: normal;
         }
 
+        /* Submit button */
         button {
             background-color: #28766d;
             color: white;
@@ -195,6 +224,8 @@
             outline: 3px solid #df7958;
             outline-offset: 3px;
         }
+
+        /* Footer */
         footer {
             background-color: #123f3b;
             color: white;
@@ -206,6 +237,7 @@
             margin: 0;
         }
 
+        /* Mobile-friendly layout */
         @media (max-width: 600px) {
             header {
                 padding: 40px 15px;
@@ -238,6 +270,10 @@
 
 <body>
 
+    <a class="skip-link" href="#main-content">
+        Skip to main content
+    </a>
+
     <header>
         <h1>My Profile and Contact Page</h1>
         <p>Welcome to my personal webpage!</p>
@@ -250,15 +286,17 @@
         </ul>
     </nav>
 
-    <main>
+    <main id="main-content">
 
         <article id="about">
             <h2>About Me</h2>
 
-            <img src="profile.jpg.jpeg"
-                 alt="Portrait of the website owner"
-                 width="200"
-                 height="200">
+            <img
+                src="profile.jpg.jpeg"
+                alt="Portrait of the website owner"
+                width="200"
+                height="200"
+            >
 
             <p>
                 Hello! I am a student learning web development.
@@ -270,46 +308,40 @@
                 <li>Web development</li>
                 <li>Reading</li>
                 <li>Learning new technologies</li>
-</ul>
-<h3>My Goals</h3>
-<ol>
- <li>Improve my HTML skills</li>
-  <li>Learn CSS</li>
-   <li>Build my first website</li>
-</ol>
-</article>
+            </ul>
 
-<section id="contact">
-  <h2>Contact Me</h2>
+            <h3>My Goals</h3>
+            <ol>
+                <li>Improve my HTML skills</li>
+                <li>Learn CSS</li>
+                <li>Build my first website</li>
+            </ol>
+        </article>
 
- <form action="#" method="post">
+        <section id="contact">
+            <h2>Contact Me</h2>
 
+            <form action="#" method="post">
 
-<label for="full-name">Full Name:</label>
-<input
-    type="text"
-    id="full-name"
-    name="full-name"
-    autocomplete="name"
-    placeholder="Enter your full name"
-    required
->
+                <label for="full-name">Full Name:</label>
+                <input
+                    type="text"
+                    id="full-name"
+                    name="full-name"
+                    autocomplete="name"
+                    placeholder="Enter your full name"
+                    required
+                >
 
-
-
-        
-               
-<label for="email">Email Address:</label>
-<input
-    type="email"
-    id="email"
-    name="email"
-    autocomplete="email"
-    placeholder="Enter your email address"
-    required
->
-
-
+                <label for="email">Email Address:</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    autocomplete="email"
+                    placeholder="Enter your email address"
+                    required
+                >
 
                 <label for="category">Inquiry Category:</label>
                 <select id="category" name="category" required>
@@ -319,22 +351,21 @@
                     <option value="support">Support</option>
                 </select>
 
-               
-<label for="message">Message:</label>
-<textarea
-    id="message"
-    name="message"
-    rows="5"
-    placeholder="Write your message here..."
-    required
-></textarea>
-
-
+                <label for="message">Message:</label>
+                <textarea
+                    id="message"
+                    name="message"
+                    rows="5"
+                    placeholder="Write your message here..."
+                    required
+                ></textarea>
 
                 <div class="newsletter">
-                    <input type="checkbox"
-                           id="newsletter"
-                           name="newsletter">
+                    <input
+                        type="checkbox"
+                        id="newsletter"
+                        name="newsletter"
+                    >
                     <label for="newsletter">
                         Subscribe to the newsletter
                     </label>
@@ -353,4 +384,4 @@
 
 </body>
 </html>
-
+```
