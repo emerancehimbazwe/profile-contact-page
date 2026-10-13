@@ -5,297 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Profile and Contact Page</title>
-
-    <style>
-
-        * {
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f1f6f5;
-            color: #263b3a;
-            line-height: 1.7;
-        }
-
-
-        .skip-link {
-            position: absolute;
-            top: -60px;
-            left: 10px;
-            background-color: #123f3b;
-            color: white;
-            padding: 10px 15px;
-            border-radius: 5px;
-            z-index: 100;
-        }
-
-        .skip-link:focus {
-            top: 10px;
-        }
-
-
-        header {
-            background: linear-gradient(135deg, #123f3b, #28766d);
-            color: white;
-            text-align: center;
-            padding: 60px 20px;
-        }
-
-        header h1 {
-            font-size: 38px;
-            margin: 0 0 10px;
-        }
-
-        header p {
-            color: #e0f2ef;
-            margin: 0;
-        }
-
-
-        nav {
-            background-color: white;
-            text-align: center;
-            padding: 20px;
-        }
-
-        nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        nav li {
-            display: inline-block;
-            margin: 0 15px;
-        }
-
-        nav a {
-            color: #16564f;
-            font-weight: bold;
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-
-        nav a:hover,
-        nav a:focus {
-            color: #df7958;
-        }
-
-        nav a:focus-visible {
-            outline: 3px solid #df7958;
-            outline-offset: 5px;
-            border-radius: 3px;
-        }
-
-
-        main {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-
-
-        article,
-        #contact {
-            background-color: white;
-            padding: 35px;
-            margin-bottom: 30px;
-            border-radius: 18px;
-            box-shadow: 0 8px 25px rgba(24, 66, 60, 0.08);
-            scroll-margin-top: 25px;
-        }
-
-        h2 {
-            color: #16564f;
-            font-size: 27px;
-            margin-top: 0;
-            border-bottom: 2px solid #d9ebe7;
-            padding-bottom: 12px;
-        }
-
-        h3 {
-            color: #28766d;
-            margin-top: 25px;
-        }
-
-
-        article img {
-            display: block;
-            width: 170px;
-            height: 170px;
-            max-width: 100%;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 5px solid #d9ebe7;
-            margin: 25px auto;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
-        }
-
-
-        article ul,
-        article ol {
-            padding-left: 25px;
-        }
-
-        article li {
-            padding-left: 5px;
-            margin-bottom: 8px;
-        }
-
-        article li::marker {
-            color: #28766d;
-        }
-
-
-        form label {
-            display: block;
-            font-weight: bold;
-            margin-bottom: 6px;
-        }
-
-
-        form input[type="text"],
-        form input[type="email"],
-        form select,
-        form textarea {
-            display: block;
-            width: 100%;
-            padding: 13px;
-            margin-bottom: 20px;
-            border: 1px solid #cbdad7;
-            border-radius: 9px;
-            background-color: #fbfdfc;
-            color: #263b3a;
-            font: inherit;
-        }
-
-        form input:focus-visible,
-        form select:focus-visible,
-        form textarea:focus-visible {
-            outline: 3px solid #28766d;
-            outline-offset: 2px;
-        }
-
-        form textarea {
-            resize: vertical;
-        }
-
-
-        .newsletter {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 22px;
-        }
-
-        .newsletter input {
-            width: 18px;
-            height: 18px;
-            accent-color: #28766d;
-            flex-shrink: 0;
-        }
-
-        .newsletter label {
-            margin: 0;
-            font-weight: normal;
-        }
-
-
-        button {
-            background-color: #28766d;
-            color: white;
-            padding: 14px 28px;
-            border: none;
-            border-radius: 9px;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background-color 0.2s, transform 0.2s;
-        }
-
-        button:hover {
-            background-color: #164e49;
-        }
-
-        button:focus-visible {
-            outline: 3px solid #df7958;
-            outline-offset: 3px;
-        }
-
-
-        footer {
-            background-color: #123f3b;
-            color: white;
-            text-align: center;
-            padding: 25px 15px;
-        }
-
-        footer p {
-            margin: 0;
-        }
-
-
-        @media (max-width: 600px) {
-            header {
-                padding: 40px 15px;
-            }
-
-            header h1 {
-                font-size: 29px;
-            }
-
-            nav {
-                padding: 15px 8px;
-            }
-
-            nav li {
-                margin: 5px 9px;
-            }
-
-            main {
-                margin: 25px auto;
-                padding: 0 12px;
-            }
-
-            article,
-            #contact {
-                padding: 22px;
-            }
-
-            h2 {
-                font-size: 23px;
-            }
-        }
-
-
-        @media (prefers-reduced-motion: reduce) {
-            html {
-                scroll-behavior: auto;
-            }
-
-            *,
-            *::before,
-            *::after {
-                transition: none !important;
-            }
-        }
-    </style>
 </head>
-
 <body>
-
-
-    <a class="skip-link" href="#main-content">
-        Skip to main content
-    </a>
-
 
     <header>
         <h1>My Profile and Contact Page</h1>
@@ -309,10 +20,8 @@
         </ul>
     </nav>
 
+    <main>
 
-    <main id="main-content">
-
-        <!-- About Me article -->
         <article id="about">
             <h2>About Me</h2>
 
@@ -329,7 +38,6 @@
             </p>
 
             <h3>My Interests</h3>
-
             <ul>
                 <li>Web development</li>
                 <li>Reading</li>
@@ -337,7 +45,6 @@
             </ul>
 
             <h3>My Goals</h3>
-
             <ol>
                 <li>Improve my HTML skills</li>
                 <li>Learn CSS</li>
@@ -345,77 +52,70 @@
             </ol>
         </article>
 
-        <
         <section id="contact" aria-labelledby="contact-heading">
             <h2 id="contact-heading">Contact Me</h2>
 
             <form action="#" method="post">
+                <p>
+                    <label for="full-name">Full Name:</label><br>
+                    <input
+                        type="text"
+                        id="full-name"
+                        name="full-name"
+                        required
+                    >
+                </p>
 
+                <p>
+                    <label for="email">Email Address:</label><br>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        required
+                    >
+                </p>
 
-                <label for="full-name">Full Name:</label>
-                <input
-                    type="text"
-                    id="full-name"
-                    name="full-name"
-                    autocomplete="name"
-                    placeholder="Enter your full name"
-                    required
-                >
+                <p>
+                    <label for="category">Inquiry Category:</label><br>
+                    <select id="category" name="category" required>
+                        <option value="">-- Select a category --</option>
+                        <option value="general">General Question</option>
+                        <option value="feedback">Feedback</option>
+                        <option value="support">Support</option>
+                    </select>
+                </p>
 
+                <p>
+                    <label for="message">Message:</label><br>
+                    <textarea
+                        id="message"
+                        name="message"
+                        rows="5"
+                        cols="30"
+                        required
+                    ></textarea>
+                </p>
 
-                <label for="email">Email Address:</label>
-                <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    autocomplete="email"
-                    placeholder="Enter your email address"
-                    required
-                >
-
-
-                <label for="category">Inquiry Category:</label>
-                <select id="category" name="category" required>
-                    <option value="">-- Select a category --</option>
-                    <option value="general">General Question</option>
-                    <option value="feedback">Feedback</option>
-                    <option value="support">Support</option>
-                </select>
-
-
-                <label for="message">Message:</label>
-                <textarea
-                    id="message"
-                    name="message"
-                    rows="5"
-                    placeholder="Write your message here..."
-                    required
-                ></textarea>
-
-
-                <div class="newsletter">
+                <p>
                     <input
                         type="checkbox"
                         id="newsletter"
                         name="newsletter"
                     >
-                    <label for="newsletter">
-                        Subscribe to the newsletter
-                    </label>
-                </div>
-
+                    <label for="newsletter">Subscribe to the newsletter</label>
+                </p>
 
                 <button type="submit">Submit</button>
-
             </form>
         </section>
 
     </main>
 
-    
     <footer>
         <p>Thank you for visiting my webpage.</p>
     </footer>
 
 </body>
 </html>
+
